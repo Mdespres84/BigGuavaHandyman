@@ -7,7 +7,7 @@
   PHOTO_UPLOADS: leave false on the free Web3Forms plan (file attachments are a paid feature).
 */
 window.BG_CONFIG = Object.freeze({
-  WEB3FORMS_KEY: "YOUR-WEB3FORMS-ACCESS-KEY",
+  WEB3FORMS_KEY: "db28e665-dac2-475c-b6b6-93728d8a7e57",
   PHONE: "(813) 555-0100",
   PHOTO_UPLOADS: false
 });
