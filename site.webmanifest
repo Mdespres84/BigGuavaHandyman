@@ -1,0 +1,12 @@
+{
+  "name": "Big Guava Handyman",
+  "short_name": "Big Guava",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F6EFE6",
+  "theme_color": "#1F4D3A",
+  "icons": [
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

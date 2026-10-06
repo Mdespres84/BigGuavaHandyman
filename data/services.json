@@ -1,0 +1,469 @@
+{
+  "minimumVisit": 179,
+  "jobCap": 2500,
+  "roundTo": 5,
+  "services": [
+    {
+      "id": "tv-mounting",
+      "name": "TV mounting",
+      "short": "Flat-screen TVs mounted level on studs, cords tidied.",
+      "qty": {
+        "label": "Number of TVs",
+        "max": 5
+      },
+      "supply": {
+        "key": "mount",
+        "label": "TV mount"
+      },
+      "variants": [
+        {
+          "id": "small",
+          "label": "Up to 42\"",
+          "low": 169,
+          "high": 209
+        },
+        {
+          "id": "medium",
+          "label": "43\" to 64\"",
+          "low": 219,
+          "high": 279
+        },
+        {
+          "id": "large",
+          "label": "65\" and larger",
+          "low": 279,
+          "high": 349
+        }
+      ],
+      "addons": [
+        {
+          "id": "masonry",
+          "label": "Fireplace, brick or stone wall",
+          "low": 99,
+          "high": 149,
+          "each": true
+        },
+        {
+          "id": "clear",
+          "label": "Move furniture or clear the wall first",
+          "low": 39,
+          "high": 79,
+          "each": false
+        },
+        {
+          "id": "cordcover",
+          "label": "Install a paintable cord cover",
+          "low": 39,
+          "high": 59,
+          "each": true,
+          "parts": true,
+          "partLabel": "Cord cover kit"
+        },
+        {
+          "id": "soundbar",
+          "label": "Mount a soundbar",
+          "low": 69,
+          "high": 99,
+          "each": true
+        },
+        {
+          "id": "remove",
+          "label": "Remove an old mount and patch the holes",
+          "low": 69,
+          "high": 119,
+          "each": true
+        }
+      ]
+    },
+    {
+      "id": "drywall-repair",
+      "name": "Drywall repair",
+      "short": "Holes and dents patched, textured and ready for paint.",
+      "qty": null,
+      "variants": [
+        {
+          "id": "small",
+          "label": "One patch up to 6\" (doorknob, anchor holes)",
+          "low": 189,
+          "high": 239
+        },
+        {
+          "id": "medium",
+          "label": "One patch up to 18\"",
+          "low": 289,
+          "high": 359
+        },
+        {
+          "id": "large",
+          "label": "One patch up to 36\"",
+          "low": 429,
+          "high": 529
+        }
+      ],
+      "addons": [
+        {
+          "id": "extra",
+          "label": "Each extra small patch, same visit",
+          "low": 89,
+          "high": 129,
+          "each": false,
+          "count": true,
+          "max": 10
+        },
+        {
+          "id": "ceiling",
+          "label": "Patch is on the ceiling",
+          "low": 75,
+          "high": 125,
+          "each": false
+        },
+        {
+          "id": "texture",
+          "label": "Match orange-peel or knockdown texture",
+          "low": 59,
+          "high": 109,
+          "each": false
+        },
+        {
+          "id": "paint",
+          "label": "Paint touch-up, color-matched paint included",
+          "low": 69,
+          "high": 129,
+          "each": false
+        },
+        {
+          "id": "clear",
+          "label": "Move furniture first",
+          "low": 39,
+          "high": 79,
+          "each": false
+        }
+      ]
+    },
+    {
+      "id": "honey-do",
+      "name": "Honey-do time blocks",
+      "short": "Book the time, hand over the list. Mixed small jobs.",
+      "qty": null,
+      "variants": [
+        {
+          "id": "two",
+          "label": "2-hour block",
+          "low": 299,
+          "high": 299
+        },
+        {
+          "id": "four",
+          "label": "Half day, 4 hours",
+          "low": 549,
+          "high": 549
+        },
+        {
+          "id": "eight",
+          "label": "Full day, 8 hours",
+          "low": 999,
+          "high": 999
+        }
+      ],
+      "addons": [
+        {
+          "id": "pickup",
+          "label": "We pick up parts on the way (parts billed at cost + 15%)",
+          "low": 45,
+          "high": 75,
+          "each": false
+        }
+      ]
+    },
+    {
+      "id": "pressure-washing",
+      "name": "Pressure washing",
+      "short": "Driveways, walks, lanais and pool decks cleared of mildew.",
+      "qty": null,
+      "variants": [
+        {
+          "id": "drive2",
+          "label": "Driveway, 2-car",
+          "low": 219,
+          "high": 279
+        },
+        {
+          "id": "drive3",
+          "label": "Driveway, 3-car or long",
+          "low": 279,
+          "high": 349
+        },
+        {
+          "id": "bundle",
+          "label": "Driveway + front walk + lanai",
+          "low": 379,
+          "high": 479
+        }
+      ],
+      "addons": [
+        {
+          "id": "lanai",
+          "label": "Add lanai or patio",
+          "low": 129,
+          "high": 219,
+          "each": false
+        },
+        {
+          "id": "pooldeck",
+          "label": "Add pool deck",
+          "low": 189,
+          "high": 299,
+          "each": false
+        },
+        {
+          "id": "stains",
+          "label": "Rust or oil stain treatment",
+          "low": 69,
+          "high": 129,
+          "each": false
+        },
+        {
+          "id": "heavy",
+          "label": "Heavy mildew, not cleaned in 2+ years",
+          "low": 59,
+          "high": 119,
+          "each": false
+        }
+      ]
+    },
+    {
+      "id": "screen-repair",
+      "name": "Lanai and pool screen repair",
+      "short": "Torn panels rescreened in existing frames.",
+      "qty": null,
+      "variants": [
+        {
+          "id": "few",
+          "label": "1 to 3 panels",
+          "low": 179,
+          "high": 299
+        },
+        {
+          "id": "some",
+          "label": "4 to 8 panels",
+          "low": 299,
+          "high": 529
+        },
+        {
+          "id": "many",
+          "label": "9 to 15 panels",
+          "low": 529,
+          "high": 879
+        }
+      ],
+      "addons": [
+        {
+          "id": "pet",
+          "label": "Pet-resistant screen",
+          "low": 0,
+          "high": 0,
+          "each": false,
+          "parts": true,
+          "partLabel": "Pet-resistant screen"
+        },
+        {
+          "id": "door",
+          "label": "Screen door repair (rollers, latch, handle)",
+          "low": 99,
+          "high": 179,
+          "each": false,
+          "parts": true,
+          "partLabel": "Screen door parts"
+        },
+        {
+          "id": "high",
+          "label": "Panels need a tall ladder",
+          "low": 69,
+          "high": 149,
+          "each": false
+        }
+      ]
+    },
+    {
+      "id": "storm-prep",
+      "name": "Storm prep",
+      "short": "Your existing panels or shutters put up before a storm.",
+      "qty": null,
+      "variants": [
+        {
+          "id": "up8",
+          "label": "Up to 8 windows and doors",
+          "low": 249,
+          "high": 349
+        },
+        {
+          "id": "up16",
+          "label": "9 to 16 windows and doors",
+          "low": 349,
+          "high": 529
+        },
+        {
+          "id": "up24",
+          "label": "17 or more",
+          "low": 529,
+          "high": 779
+        }
+      ],
+      "addons": [
+        {
+          "id": "takedown",
+          "label": "Take-down visit after the storm",
+          "low": 179,
+          "high": 349,
+          "each": false
+        },
+        {
+          "id": "yard",
+          "label": "Secure patio furniture and yard items",
+          "low": 69,
+          "high": 129,
+          "each": false
+        },
+        {
+          "id": "second",
+          "label": "Second-story openings",
+          "low": 129,
+          "high": 249,
+          "each": false
+        }
+      ]
+    },
+    {
+      "id": "furniture-assembly",
+      "name": "Furniture assembly",
+      "short": "Flat-pack furniture built, leveled and anchored.",
+      "qty": {
+        "label": "Number of items",
+        "max": 10
+      },
+      "variants": [
+        {
+          "id": "small",
+          "label": "Small: chair, nightstand, bookshelf",
+          "low": 99,
+          "high": 129
+        },
+        {
+          "id": "medium",
+          "label": "Medium: desk, dresser, TV stand",
+          "low": 149,
+          "high": 199
+        },
+        {
+          "id": "large",
+          "label": "Large: bed frame, wardrobe, crib",
+          "low": 189,
+          "high": 279
+        }
+      ],
+      "addons": [
+        {
+          "id": "anchor",
+          "label": "Anchor to the wall (tip-over kit)",
+          "low": 29,
+          "high": 49,
+          "each": true,
+          "parts": true,
+          "partLabel": "Anti-tip kit"
+        },
+        {
+          "id": "boxes",
+          "label": "Haul away the boxes",
+          "low": 35,
+          "high": 55,
+          "each": false
+        }
+      ]
+    },
+    {
+      "id": "hanging-installs",
+      "name": "Shelves, blinds and wall hanging",
+      "short": "Shelves, blinds, curtain rods, mirrors and art, hung level.",
+      "qty": null,
+      "variants": [
+        {
+          "id": "one",
+          "label": "1 item",
+          "low": 89,
+          "high": 129
+        },
+        {
+          "id": "few",
+          "label": "2 to 4 items",
+          "low": 169,
+          "high": 249
+        },
+        {
+          "id": "many",
+          "label": "5 to 8 items",
+          "low": 279,
+          "high": 399
+        }
+      ],
+      "addons": [
+        {
+          "id": "heavy",
+          "label": "Heavy mirror or art over 40 lb",
+          "low": 59,
+          "high": 99,
+          "each": false
+        },
+        {
+          "id": "masonry",
+          "label": "Brick, tile or concrete wall",
+          "low": 59,
+          "high": 109,
+          "each": false
+        }
+      ]
+    },
+    {
+      "id": "painting",
+      "name": "Small painting jobs",
+      "short": "Accent walls, touch-ups and small rooms. Paint included.",
+      "qty": null,
+      "variants": [
+        {
+          "id": "accent",
+          "label": "Accent wall or touch-ups",
+          "low": 349,
+          "high": 479
+        },
+        {
+          "id": "room",
+          "label": "One small room (bath, office)",
+          "low": 649,
+          "high": 949
+        }
+      ],
+      "addons": [
+        {
+          "id": "ceiling",
+          "label": "Paint the ceiling too",
+          "low": 199,
+          "high": 329,
+          "each": false
+        },
+        {
+          "id": "trim",
+          "label": "Trim and baseboards",
+          "low": 149,
+          "high": 249,
+          "each": false
+        },
+        {
+          "id": "prep",
+          "label": "Patch nail holes and dings first",
+          "low": 69,
+          "high": 179,
+          "each": false
+        }
+      ]
+    }
+  ]
+}
