@@ -379,15 +379,41 @@
         signal: ctrl ? ctrl.signal : undefined,
         credentials: "omit",
         referrerPolicy: "strict-origin-when-cross-origin"
-      }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return r.ok && j.success; }); })
-        .then(function (ok) { done(ok, false); })
-        .catch(function () { done(false, false); })
+      }).then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (j) {
+            if (r.ok && j.success) return { ok: true };
+            return { ok: false, why: "Form service said: " + String(j.message || ("HTTP " + r.status)).slice(0, 160) };
+          });
+        })
+        .then(function (res) { done(res.ok, false, res.why); })
+        .catch(function (err) { done(false, false, err && err.name === "AbortError" ? "Timed out after 15 seconds" : "Network blocked or offline"); })
         .then(function () { if (timer) clearTimeout(timer); });
 
-      function done(ok, preview) {
+      // Copy the request into the ops sheet (Estimates tab, status "Request"). Email stays the backup.
+      function logToSheet() {
+        var url = String(CFG.OPS_ENDPOINT || "");
+        if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(url)) return;
+        var items = cart.map(function (it) { var p = linePrice(it); return { name: byId[it.sid].name + ": " + describe(it), qty: it.qty || 1, price: rng(p.low, p.high) }; });
+        var body = {
+          name: payload.name, phone: payload.phone, email: payload.email, address: payload.street, zip: payload.zip,
+          timing: payload.weekend + " (reach by " + payload.contact_by + ")",
+          message: "Estimated range " + payload.estimated_range + ". Parts at cost + 15%: " + payload.parts_at_cost_plus_15 + (payload.notes ? "\n\nNotes: " + payload.notes : ""),
+          items: items, company_website: ""
+        };
+        try {
+          fetch(url, { method: "POST", mode: "no-cors", credentials: "omit", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body) })
+            .catch(function () { /* email already went out */ });
+        } catch (err) { /* email already went out */ }
+      }
+
+      function done(ok, preview, why) {
         btn.disabled = false; btn.textContent = "Send my list";
-        if (ok) lastSent = Date.now();
-        if (!ok) { showStatus("Your list didn't send. Check your connection and try again, or call or text " + (CFG.PHONE || "us") + ".", false); return; }
+        if (ok) { lastSent = Date.now(); if (!preview) logToSheet(); }
+        if (!ok) {
+          if (why && window.console) console.warn("Estimate send failed: " + why);
+          showStatus("Your list didn't send. Check your connection and try again, or call or text " + (CFG.PHONE || "us") + "." + (why ? " (" + why + ")" : ""), false);
+          return;
+        }
         cart = []; save(); renderCart(); renderMenu();
         form.hidden = true;
         var sent = document.getElementById("sent");
