@@ -96,12 +96,12 @@
     var v = s.variants.filter(function (x) { return x.id === it.vid; })[0];
     var sup = it.supply || {};
     var parts = [(s.qty && it.qty > 1 ? it.qty + " × " : "") + v.label];
-    if (s.supply) parts.push(s.supply.label + (sup[s.supply.key] === "bg" ? " from Big Guava" : " supplied by you"));
+    if (s.supply) parts.push(s.supply.label + (sup[s.supply.key] === "bg" ? " from Salt & Sawdust" : " supplied by you"));
     s.addons.forEach(function (a) {
       var n = it.addons[a.id];
       if (!n) return;
       var txt = a.count ? a.label + " × " + n : a.label;
-      if (a.parts) txt += sup[a.id] === "bg" ? " (kit from Big Guava)" : " (you supply)";
+      if (a.parts) txt += sup[a.id] === "bg" ? " (kit from Salt & Sawdust)" : " (you supply)";
       parts.push(txt);
     });
     return parts.join(" · ");
@@ -139,7 +139,7 @@
     return el("fieldset", { class: "supply" }, [
       el("legend", { class: "small", text: "Who supplies the " + label.replace(/^[A-Z][a-z]/, function (m) { return m.toLowerCase(); }) + "?" }),
       opt("home", "I'll supply it", "$0"),
-      opt("bg", "Big Guava supplies it (we send you options)", "Cost + 15%")
+      opt("bg", "Salt & Sawdust supplies it (we send you options)", "Cost + 15%")
     ]);
   }
 
@@ -348,7 +348,7 @@
       var payload = {
         access_key: CFG.WEB3FORMS_KEY,
         subject: "Estimate request " + rng(t.low, t.high) + " from " + name,
-        from_name: "Big Guava website",
+        from_name: "Salt & Sawdust website",
         name: name,
         phone: clean(document.getElementById("f-phone").value, 20),
         email: clean(document.getElementById("f-email").value, 120),

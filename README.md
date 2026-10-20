@@ -1,8 +1,8 @@
-# Big Guava Handyman — Website Build & Launch Guide
+# Salt & Sawdust Handyman — Website Build & Launch Guide
 
-Master reference for the bigguavahandyman.com website. Everything needed to edit, publish, connect and maintain the site lives in this file and this folder.
+Master reference for the saltsawdusthandyman.com website. Everything needed to edit, publish, connect and maintain the site lives in this file and this folder.
 
-Last consolidated: October 6, 2026.
+Last consolidated: October 6, 2026. Rebranded to Salt & Sawdust Handyman: October 20, 2026.
 
 ---
 
@@ -13,9 +13,9 @@ A static website hosted free on GitHub Pages. No server, database, admin login o
 - **9 service pages** with price ranges, plus Services, Service Area, FAQ, About, Privacy and 404 pages.
 - **Estimate builder** (`estimate.html`): customers pick services, size and add-ons; the price range updates live; they send the list. The request is emailed to you through **Web3Forms** (free). Nothing is sold on the site.
 - **Built-in rules:** $179 minimum visit, $2,500 job cap warning (Florida handyman-exemption limit), prices rounded to $5.
-- **Products Big Guava supplies** (TV mounts, cord covers, anti-tip kits, pet screen): labor keeps its own price; a "Who supplies it?" sub-choice shows $0 for customer-supplied or "Cost + 15%" for Big Guava-supplied. No fixed product price is shown.
+- **Products Salt & Sawdust supplies** (TV mounts, cord covers, anti-tip kits, pet screen): labor keeps its own price; a "Who supplies it?" sub-choice shows $0 for customer-supplied or "Cost + 15%" for Salt & Sawdust-supplied. No fixed product price is shown.
 - **Hours:** Saturday–Sunday, 8 a.m.–5 p.m. Service area: ~30 minutes from Town 'N' Country.
-- **Brand:** logo Concept A (halved guava with hex nut). Colors: green `#1F4D3A`, pink `#E8798A`, red `#C23B52`, cream `#F6EFE6`. Fonts: Bricolage Grotesque (headings) and Figtree (body), self-hosted.
+- **Brand (rebranded Oct 20, 2026 from Big Guava):** round stamped-label logo — "SALT & SAWDUST / HANDYMAN · TAMPA BAY", S&S monogram, saw-tooth line and waves, EST. 2026. Colors: weathered navy `#22374F`, harbor night `#142233`, sand `#E8DABF`, paper `#F4EEE1`, driftwood `#A38A63`, rust accent `#8F4521`. Fonts: Zilla Slab (headings), Oswald (labels), Figtree (body), self-hosted.
 
 ## 2. File map
 
@@ -46,13 +46,13 @@ A static website hosted free on GitHub Pages. No server, database, admin login o
 |---|---|
 | `(813) 555-0100` | Your Google Voice number, e.g. `(813) 123-4567` |
 | `+18135550100` | Same number as `+1` + 10 digits |
-| `hello@bigguavahandyman.com` | Your Big Guava address (e.g. `mike@bigguavahandyman.com`) — or keep `hello@` as an alias |
-| `https://bigguavahandyman.com` | Only if you end up on a different domain |
+| `hello@saltsawdusthandyman.com` | Your Salt & Sawdust address (e.g. `mike@saltsawdusthandyman.com`) — or keep `hello@` as an alias |
+| `https://saltsawdusthandyman.com` | Only if you end up on a different domain |
 
 ### 3b. Connect the form (Web3Forms)
 
-1. Go to web3forms.com, enter the inbox that should receive requests (your Workspace inbox via the Big Guava alias), and copy the access key.
-2. In the Web3Forms dashboard: restrict the key to `bigguavahandyman.com`, turn the spam filter on.
+1. Go to web3forms.com, enter the inbox that should receive requests (your Workspace inbox via the Salt & Sawdust alias), and copy the access key.
+2. In the Web3Forms dashboard: restrict the key to `saltsawdusthandyman.com`, turn the spam filter on.
 3. Open `assets/js/config.js` and set:
    - `WEB3FORMS_KEY` → your key (it's designed to be public)
    - `PHONE` → your business number
@@ -64,16 +64,16 @@ Emails arrive with subject **"Estimate request $X–$Y from Name."**
 ## 4. Publish on GitHub Pages
 
 1. **Turn on two-factor login on GitHub first.** Account takeover is the main real risk for this site.
-2. Create a new **public** repo, e.g. `big-guava-site`.
+2. Create a new **public** repo, e.g. `salt-sawdust-site`.
 3. Upload everything in this folder to the repo root (drag and drop works). Make sure `.nojekyll` and the `.well-known` folder go up — on a Mac, press Cmd+Shift+. in Finder to see hidden files.
 4. Repo **Settings → Pages** → Source: **Deploy from a branch**, branch `main`, folder `/ (root)` → Save.
-5. In 1–2 minutes it's live at `https://YOUR-USERNAME.github.io/big-guava-site/`.
+5. In 1–2 minutes it's live at `https://YOUR-USERNAME.github.io/salt-sawdust-site/`.
 
 ## 5. Domain
 
-1. Buy `bigguavahandyman.com` at **Cloudflare Registrar or Porkbun**. Turn on two-factor login and auto-renew; skip every add-on.
+1. Buy `saltsawdusthandyman.com` at **Cloudflare Registrar or Porkbun**. Turn on two-factor login and auto-renew; skip every add-on.
 2. **Verify the domain with GitHub first:** profile **Settings → Pages → Add a domain**, then add the TXT record GitHub gives you at your registrar. This stops anyone else claiming your domain on GitHub.
-3. Repo **Settings → Pages → Custom domain** → `bigguavahandyman.com` → Save (GitHub creates the `CNAME` file).
+3. Repo **Settings → Pages → Custom domain** → `saltsawdusthandyman.com` → Save (GitHub creates the `CNAME` file).
 4. At the registrar, add DNS records:
 
 | Type | Name | Value |
@@ -89,9 +89,9 @@ Emails arrive with subject **"Estimate request $X–$Y from Name."**
 
 ## 6. Email on the domain (uses the Workspace you already pay for)
 
-Goal: customers only ever see the Big Guava address, never Streak.
+Goal: customers only ever see the Salt & Sawdust address, never Streak.
 
-1. Google Admin → **Account → Domains → Manage domains → Add a domain** → `bigguavahandyman.com` as a **User alias domain** (no extra cost). Verify with the TXT record it gives you.
+1. Google Admin → **Account → Domains → Manage domains → Add a domain** → `saltsawdusthandyman.com` as a **User alias domain** (no extra cost). Verify with the TXT record it gives you.
 2. DNS records at the registrar:
 
 | Type | Name | Value |
@@ -99,22 +99,22 @@ Goal: customers only ever see the Big Guava address, never Streak.
 | MX | `@` | `smtp.google.com`, priority 1 |
 | TXT (SPF) | `@` | `v=spf1 include:_spf.google.com ~all` |
 | TXT (DKIM) | `google._domainkey` | Generate in Admin → Apps → Gmail → Authenticate email, then click Start authentication |
-| TXT (DMARC) | `_dmarc` | `v=DMARC1; p=none; rua=mailto:YOUR-BIG-GUAVA-ADDRESS` |
+| TXT (DMARC) | `_dmarc` | `v=DMARC1; p=none; rua=mailto:YOUR-SALT-SAWDUST-ADDRESS` |
 
    If the registrar already shows an SPF record, merge into one — never two SPF records.
-3. Send a test from a personal Gmail to `mike@bigguavahandyman.com`.
-4. Gmail → Settings → Accounts → **Send mail as** → add the Big Guava address; turn on **Reply from the same address the message was sent to**.
-5. **Make the Big Guava address your default "Send mail as"** (or switch the From line every time). The ops sheet's estimate/invoice drafts use your default address — today that's Streak.
+3. Send a test from a personal Gmail to `mike@saltsawdusthandyman.com`.
+4. Gmail → Settings → Accounts → **Send mail as** → add the Salt & Sawdust address; turn on **Reply from the same address the message was sent to**.
+5. **Make the Salt & Sawdust address your default "Send mail as"** (or switch the From line every time). The ops sheet's estimate/invoice drafts use your default address — today that's Streak.
 6. Signature: name, phone, website. Never "licensed" or "contractor."
-7. Gmail filters → label **Big Guava** for subject `Estimate request` (website) and `New job request` (ops sheet alerts).
+7. Gmail filters → label **Salt & Sawdust** for subject `Estimate request` (website) and `New job request` (ops sheet alerts).
 8. After ~a month of clean DMARC reports, change DMARC to `p=quarantine`.
 
 ## 7. Go-live test
 
 1. Re-upload any files you changed (config.js and the HTML pages after find-and-replace).
-2. On your phone: build an estimate with a "Big Guava supplies it" option, send it, and confirm the email lands under the Big Guava label.
+2. On your phone: build an estimate with a "Salt & Sawdust supplies it" option, send it, and confirm the email lands under the Salt & Sawdust label.
 3. Check the phone and email links in the footer actually work.
-4. Add the site to **Google Search Console** and submit `https://bigguavahandyman.com/sitemap.xml`.
+4. Add the site to **Google Search Console** and submit `https://saltsawdusthandyman.com/sitemap.xml`.
 5. Only now share the link (Google profile, Facebook, Nextdoor, flyer, cards, truck magnets).
 
 ## 8. Changing prices and services
@@ -130,7 +130,7 @@ Each service has:
 - `variants` — pick-one sizes/options, each with `low` and `high`.
 - `addons` — extras. `"each": true` multiplies by quantity (e.g. per TV); `"count": true` lets the customer choose how many.
 - `qty` — whether the customer can set a quantity, and the max.
-- `supply` — products Big Guava can supply (shows the "Who supplies it?" choice at cost + 15%).
+- `supply` — products Salt & Sawdust can supply (shows the "Who supplies it?" choice at cost + 15%).
 
 The "from $X" prices on the home and services pages fill in from this file automatically. The schema data in each page's `<head>` (min/max prices for Google) and the price ranges written into each service page are static — if you change a service's range, update that service page and the `hasOfferCatalog` block too, or ask Claude to regenerate them.
 
@@ -165,8 +165,8 @@ Ask Claude to make the step 2–3 edits when you're ready; it's a small change.
 
 ## 12. Where things live
 
-- **Site files:** this folder / the `big-guava-site.zip` in the Big Guava project.
-- **Live preview:** the "Big Guava Handyman" artifact in Claude.
-- **Ops system:** `ops/BigGuavaOps.gs` in the Big Guava project.
-- **Launch order:** Big Guava Master Task List (Phase 2 = domain/email/phone, Phase 3 = website live).
-- **Logo kit & brand guide:** `big-guava-logo-kit.zip` from the original business chat.
+- **Site files:** this folder / the Claude project (still titled Big Guava Handyman).
+- **Live preview:** the "Salt & Sawdust Handyman" artifact in Claude.
+- **Ops system:** `ops/BigGuavaOps.gs` in the Claude project (file name unchanged).
+- **Launch order:** Salt & Sawdust Master Task List (Phase 2 = domain/email/phone, Phase 3 = website live).
+- **Logo & brand board:** "Salt & Sawdust Brand" design canvas in Claude (stamp logo, palette, type, card and truck-door mockups).

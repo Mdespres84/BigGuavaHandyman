@@ -54,10 +54,10 @@
             tr.appendChild(a); tr.appendChild(b); frag.appendChild(tr);
           }
           s.variants.forEach(function (v) { row(v.label, rng(v.low, v.high)); });
-          if (s.supply) { row(s.supply.label + ": you supply it", "$0"); row(s.supply.label + ": Big Guava supplies it", "Cost + 15%"); }
+          if (s.supply) { row(s.supply.label + ": you supply it", "$0"); row(s.supply.label + ": Salt & Sawdust supplies it", "Cost + 15%"); }
           s.addons.forEach(function (a) {
             row("Add: " + a.label + (a.each ? " (each)" : ""), a.parts && !a.high ? "No extra labor" : "+" + rng(a.low, a.high) + (a.parts ? " labor" : ""));
-            if (a.parts) row((a.partLabel || a.label) + ": you supply it, or Big Guava supplies it", "$0 or cost + 15%", "sub");
+            if (a.parts) row((a.partLabel || a.label) + ": you supply it, or Salt & Sawdust supplies it", "$0 or cost + 15%", "sub");
           });
           body.replaceChildren(frag);
         });
