@@ -15,7 +15,7 @@
   --muted: #4E5563;
   --line: #DED3BC;
   --brand: #22374F;
-  --brand-soft: #E2E7EC;
+  --brand-soft: #E7DECB;
   --accent: #8F4521;
   --accent-ink: #FFFFFF;
   --accent-soft: #F2E0D3;
@@ -34,14 +34,14 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #101B28; --surface: #172536; --ink: #EFE6D3; --muted: #A9B3BF; --line: #2A3A4F;
-    --brand: #E8DABF; --brand-soft: #1D2E44; --accent: #D9925F; --accent-ink: #1F120A; --accent-soft: #3B2719;
+    --bg: #1A1815; --surface: #24211C; --ink: #F1E9D8; --muted: #B8AE9D; --line: #3A342B;
+    --brand: #E8DABF; --brand-soft: #36312A; --accent: #D9925F; --accent-ink: #1F120A; --accent-soft: #3B2719;
     --focus: #E8DABF; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #101B28; --surface: #172536; --ink: #EFE6D3; --muted: #A9B3BF; --line: #2A3A4F;
-  --brand: #E8DABF; --brand-soft: #1D2E44; --accent: #D9925F; --accent-ink: #1F120A; --accent-soft: #3B2719;
+  --bg: #1A1815; --surface: #24211C; --ink: #F1E9D8; --muted: #B8AE9D; --line: #3A342B;
+  --brand: #E8DABF; --brand-soft: #36312A; --accent: #D9925F; --accent-ink: #1F120A; --accent-soft: #3B2719;
   --focus: #E8DABF; color-scheme: dark;
 }
 
@@ -110,7 +110,7 @@ main { display: block; }
 @media (max-width: 52rem) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } }
 
 /* Work-order ticket: the signature object */
-.ticket { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; padding: 1.5rem 1.5rem 1.75rem; box-shadow: 0 18px 40px -24px rgba(31, 77, 58, .45); transform: rotate(-1.2deg); }
+.ticket { --surface: #FBF7EE; --ink: #142233; --muted: #4E5563; --line: #DCCFB4; --brand: #22374F; --brand-soft: #E7DECB; --accent: #8F4521; color: var(--ink); position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; padding: 1.5rem 1.5rem 1.75rem; box-shadow: 0 18px 40px -22px rgba(20, 16, 10, .55); transform: rotate(-1.2deg); }
 .ticket::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; background: radial-gradient(circle at 10px 0, transparent 7px, var(--surface) 7.5px) 0 0 / 20px 10px repeat-x; }
 .ticket-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 2px dashed var(--line); padding-bottom: .75rem; margin-bottom: .75rem; }
 .ticket-head strong { font-family: var(--font-display); font-size: 1.15rem; }
